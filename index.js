@@ -4,7 +4,8 @@
 //var geocoder = new google.maps.Geocoder;
 const apiKeyGoogle = 'AIzaSyAet-71OT4G0Y0ty-p_1lqA7YZ1e45MW1Y'; 
 const searchURL = 'https://www.googleapis.com/civicinfo/v2/representatives';
-const VoteUrlJ = 'http://api.votesmart.org/Officials.getByOfficeState?key=429c49885c2420058c8c1aa27e4989d9&stateId=NA&officeId=77&officeTypeId=J&o=JSON'
+const VoteUrlJ = 'https://api.votesmart.org/Officials.getByOfficeState?key=429c49885c2420058c8c1aa27e4989d9&stateId=NA&officeId=77&officeTypeId=J&o=JSON'
+const VoteUrlLE = 'https://api.votesmart.org/Local.getOfficials?key=429c49885c2420058c8c1aa27e4989d9';
 
 //
 function findMe() {
@@ -15,6 +16,7 @@ function formatQueryParams(params) {
   const queryItems = Object.keys(params).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
   return queryItems.join('&');
 }
+
 
 
 function displayResultsGoogleAPI(responseJson) {
@@ -123,10 +125,19 @@ function displayResultsGoogleAPI(responseJson) {
                 `
               );
             })
-          };
+          }; 
     };
+     //local judicial branch
+     $('#local-judicial').append(
+        `
+        <div class="results-row">
+          <div class="result-Cell"><p>Municipal Court</p></div>
+        </div> 
+        `
+      );
     //call other URL for missing data 
     otherAPI(VoteUrlJ)
+    
   };
   
  function displayResultsVoteSMartAPI(responseJson){
@@ -247,14 +258,14 @@ function watchForm() {
   });
 }
 
-function watchRep() {
-    $('#address-search').click(event => {
-        event.preventDefault();
-        console.log('rep lookup')
-        // run google geolocation api in findMe
-        renderRepData(); 
-        });    
-}
+// function watchRep() {
+//     $('#address-search').click(event => {
+//         event.preventDefault();
+//         console.log('rep lookup')
+//         // run google geolocation api in findMe
+//         renderRepData(); 
+//         });    
+// }
 
 //handler
 
