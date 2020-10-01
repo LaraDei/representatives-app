@@ -1,0 +1,127 @@
+
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+
+  h1{
+    text-align: center;
+  }
+  h4{
+      text-align: center;
+  }
+
+  form {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative
+    
+  }
+  #address{
+    display: flex;
+    margin: 15px 0px 40px;
+    table-layout: auto;
+    
+  
+  }
+  .label{
+    font-weight: bold;
+  }
+  
+  #js-search-address {
+    padding: 10px;
+    width: 100%;
+  }
+
+  #js-search-level {
+    margin: 15px 0px 40px;
+    padding: 5px;
+    width: 100%;
+
+  }
+
+  button, input[type="submit"]{
+  align-self: center;
+  padding: 10px 0;
+  font-weight: bold;
+  }
+  
+  #address-search {
+    width: 80px;
+
+  }
+  #search{
+    width: 100%;
+  }
+  
+ .submit{
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  
+  button:hover {
+    cursor: pointer;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .error-message {
+      color: red;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+
+  #results {
+     display: flex;
+     flex-direction: column; 
+     border-radius: 10px;
+     border-color: royalblue;
+     border-width: 5px;
+  }
+
+  .level {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+  }
+  .branch{
+    width: 100%;
+    margin-right: 5px;
+    border-radius: 10px;
+    padding: 15px;
+  }
+
+  .results-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+  }
+  .results-cell{
+      flex-shrink: ;
+  }
+
+  .judicial {
+      background-color: rgba(42, 134, 19, 0.5);
+  }
+
+  .executive {  
+    background-color: rgba(0, 17, 255, 0.5);
+  }
+
+  .legislative {
+    background-color: rgba(168, 5, 5, 0.5)
+  }
+  img{
+      width: 100%;
+  }

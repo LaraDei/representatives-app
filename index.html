@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Representative finder</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Find Your Representatives </h1>
+
+        <form id="js-form">
+            
+            <label class="label" for="search-address">Enter Your Address</label>
+            <div id="address">
+            <input type="text" name="search-address" id="js-search-address" required placeholder="1600 Pennsylvania Avenue NW Washington, DC 20500">
+            
+            <input type="submit" class="btn" id="address-search" value="Find Me">
+            </div>
+
+            
+            <label class="label" for="search-level">Select level of government</label>
+
+            <select id="js-search-level" name="search-level">
+                <option value="all">All</option>
+                <option value="administrativeArea2">Local</option>
+                <option value="administrativeArea1">State</option>
+                <option value="country">Federal</option>
+            </select>
+            
+            <div class="submit">
+            <input type="submit" class="btn" id="search" value="Search">
+            </div>
+        </form>
+
+        <p id="js-error-message" class="error-message"></p>
+        <p id="no-result-message" class="error-message"></p>
+
+        <section id="results" class="hidden">
+          <h2>Search Results</h2> 
+          <h3>Local Government</h3>
+            <div class=" local level">
+              
+              <div class="branch executive" id="local-executive">
+                  <h4>Executive</h4>
+              </div>
+              <div class="branch legislative" id="local-legislative">
+                  <h4>Legislative</h4>
+              </div>
+              <div class="branch judicial" id="local-judicial">
+                  <h4>Judicial</h4>
+              </div>
+
+            </div>
+
+          <h3>State Government</h3>  
+            <div class="state level">
+              <div class="branch executive" id="state-executive">
+                  <h4>Executive</h4>
+              </div>
+              <div class="branch legislative" id="state-legislative">
+                  <h4>Legislative</h4>
+              </div>
+              <div class="branch judicial" id="state-judicial">
+                  <h4>Judicial</h4>
+              </div>
+            </div>
+
+          <h3 >Federal Government</h3> 
+            <div class="federal level">
+                <div class="branch executive" id="fed-executive">
+                    <h4>Executive</h4>
+                </div>
+                <div class="branch legislative" id="fed-legislative">
+                    <h4>Legislative</h4>
+                </div>
+                <div class="branch judicial" id="fed-judicial">
+                    <h4>Judicial</h4>
+                </div>
+            </div>
+   
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    
+</body>
+</html>
+        
