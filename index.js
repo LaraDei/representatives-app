@@ -136,7 +136,6 @@ function displayResultsGoogleAPI(responseJson) {
         `
       );
     //call other URL for missing data 
-    otherAPI(VoteUrlJ)
     
   };
   
@@ -209,11 +208,11 @@ function getReps(searchAddress, searchLevel) {
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
       $('#results-list').empty();
     });
-}
 
 
-function otherAPI(url){
-fetch(url)
+
+
+fetch(VoteUrlJ)
   .then(response => {
     if (response.ok) {
       return response.json();
@@ -228,19 +227,20 @@ fetch(url)
     $('#js-error-message').text(`Something went wrong: ${err.message}`);
     $('#results-list').empty();
   });
+
 }
 
 //listeners
 
-function watchAddress(){
-//watch for address lookup
-$('#address-search').click(event => {
-    event.preventDefault();
-    console.log('address lookup')
-    // run google geolocation api in findMe
-    findMe(); 
-    });    
-}
+// function watchAddress(){
+// //watch for address lookup
+// $('#address-search').click(event => {
+//     event.preventDefault();
+//     console.log('address lookup')
+//     // run google geolocation api in findMe
+//     findMe(); 
+//     });    
+// }
 
 
 function watchForm() {
@@ -252,7 +252,7 @@ function watchForm() {
     //declare submitted values
     const searchAddress = $('#js-search-address').val();
     const searchLevel = $('#js-search-level').val();
-    console.log(searchAddress)
+    
     // run api function
     getReps(searchAddress, searchLevel);
   });
@@ -270,7 +270,7 @@ function watchForm() {
 //handler
 
 function handleSearchApp() {
-    watchAddress()
+    //watchAddress()
     watchForm()
 }
 

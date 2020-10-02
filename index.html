@@ -14,22 +14,27 @@
 
         <form id="js-form">
             
-            <label class="label" for="search-address">Enter Your Address</label>
-            <div id="address">
-            <input type="text" name="search-address" id="js-search-address" required placeholder="1600 Pennsylvania Avenue NW Washington, DC 20500">
-            
-            <input type="submit" class="btn" id="address-search" value="Find Me">
+            <label class="label" for="search-street">Enter Your street</label>
+            <div id="street">
+            <input class="input" type="text" name="search-street" id="js-search-street" required placeholder="1600 Pennsylvania Avenue NW">
             </div>
 
-            
-            <label class="label" for="search-level">Select level of government</label>
+            <label class="label" for="search-city">Enter Your City</label>
+            <div id="city">
+            <input class="input" type="text" name="search-stcityate" id="js-search-city" required placeholder="Washington">
+            </div>
 
-            <select id="js-search-level" name="search-level">
-                <option value="all">All</option>
-                <option value="administrativeArea2">Local</option>
-                <option value="administrativeArea1">State</option>
-                <option value="country">Federal</option>
-            </select>
+
+            <label class="label" for="search-state">Enter Your State</label>
+            <div id="state">
+            <input  class="input" type="text" name="search-state" id="js-search-state" required placeholder="DC">
+            </div>
+
+            <label class="label" for="search-zip">Enter Your Zipcode</label>
+            <div id="state">
+            <input  class="input" type="text" name="search-zip" id="js-search-zip" required placeholder="20500">
+            </div>
+            
             
             <div class="submit">
             <input type="submit" class="btn" id="search" value="Search">
@@ -85,7 +90,7 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
+    <script src="vsindex.js"></script>
     
 </body>
 </html>

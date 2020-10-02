@@ -18,26 +18,15 @@
     position: relative
     
   }
-  #address{
-    display: flex;
-    margin: 15px 0px 40px;
-    table-layout: auto;
-    
-  
-  }
+
   .label{
     font-weight: bold;
   }
   
-  #js-search-address {
-    padding: 10px;
-    width: 100%;
-  }
-
-  #js-search-level {
-    margin: 15px 0px 40px;
+  .input {
     padding: 5px;
     width: 100%;
+    margin: 10px auto 30px auto;
 
   }
 
@@ -47,10 +36,6 @@
   font-weight: bold;
   }
   
-  #address-search {
-    width: 80px;
-
-  }
   #search{
     width: 100%;
   }
