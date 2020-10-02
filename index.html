@@ -25,7 +25,7 @@
             </div>
 
 
-            <label class="label" for="search-state">Enter Your State</label>
+            <label class="label" for="search-state">Enter Your State Abbreviation</label>
             <div id="state">
             <input  class="input" type="text" name="search-state" id="js-search-state" required placeholder="DC">
             </div>
@@ -49,47 +49,60 @@
           <h3>Local Government</h3>
             <div class="local level ">
               
-              <div class="branch executive" id="local-executive">
+              <div class="branch executive">
                   <h4>Executive</h4>
+                  <div id="local-executive"></div>
               </div>
-              <div class="branch legislative" id="local-legislative">
+              <div class="branch legislative" >
                   <h4>Legislative</h4>
+                  <div id="local-legislative"></div>
               </div>
-              <div class="branch judicial" id="local-judicial">
+              <div class="branch judicial">
                   <h4>Judicial</h4>
+                  <div id="local-judicial"></div>
               </div>
 
             </div>
 
           <h3>State Government</h3>  
-            <div class="state level ">
-              <div class="branch executive" id="state-executive">
+            <div class="state level" id="state-results">
+              <div class="branch executive">
                   <h4>Executive</h4>
+                  <div id="state-executive"></div>
               </div>
-              <div class="branch legislative" id="state-legislative">
+              <div class="branch legislative">
                   <h4>Legislative</h4>
+                  <div id="state-legislative"></div>
               </div>
-              <div class="branch judicial" id="state-judicial">
+              <div class="branch judicial">
                   <h4>Judicial</h4>
+                  <div id="state-judicial"></div>
               </div>
             </div>
 
           <h3 >Federal Government</h3> 
             <div class="federal level ">
-                <div class="branch executive" id="fed-executive">
+                <div class="branch executive">
                     <h4>Executive</h4>
+                    <div id="fed-executive"></div>
                 </div>
-                <div class="branch legislative" id="fed-legislative">
+                <div class="branch legislative">
                     <h4>Legislative</h4>
+                    <div id="fed-legislative"></div>
                 </div>
-                <div class="branch judicial" id="fed-judicial">
+                <div class="branch judicial">
                     <h4>Judicial</h4>
+                    <div id="fed-judicial"></div>
                 </div>
             </div>
    
         </div>
+
+        <div id="rep-result" class="results hidden">
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script type='text/javascript' src='config.js'></script>
     <script src="vsindex.js"></script>
     
 </body>

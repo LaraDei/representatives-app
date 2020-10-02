@@ -1,0 +1,7 @@
+// .gitignore
+
+# api keys
+config.js       
+
+# dependencies
+/node_modules
