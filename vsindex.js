@@ -41,8 +41,8 @@ const params = [
 //store needed data in params -------------------------------------------------------------
 
 function storeData(searchStreet, searchCity, searchState, searchZip) {
-    params[0].street = searchStreet.replaceAll('[^a-zA-Z0-9]', '');
-    params[0].city = searchCity;
+    params[0].street = searchStreet.replace(/[^\w\s]/gi, '');
+    params[0].city = searchCity.replace(/(\b[a-z](?!\s))/g, function(searchCity){return searchCity.toUpperCase()})
     params[0].state = searchState.toUpperCase();
     params[0].zipcode = searchZip;
 
@@ -74,15 +74,7 @@ function formatQueryParams(params) {
 
 
 function getdigitZip(str){
-    // $('#local-executive').empty();
-    // $('#local-legislative').empty();
-    // $('#local-judicial').empty();
-    // $('#state-executive').empty();
-    // $('#state-legislative').empty();
-    // $('#state-judicial').empty();
-    // $('#fed-executive').empty();
-    // $('#fed-legislative').empty();
-    // $('#fed-judicial').empty();
+
   //format 9digit zipcode query
   const smartyUrl = getZip +'&' + str;
   console.log(smartyUrl);
