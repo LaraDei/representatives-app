@@ -335,7 +335,7 @@ function renderResults2(obj){
         $('#local-legislative').append(
         `
         <div class="results-row">
-        <div class="result-Cell"><p>${title}</p><p><a href="#" id=${candidate}>${name}</a></p></div>
+        <div class="result-Cell"><p>${title}</p><p><a href="#rep-result" id=${candidate}>${name}</a></p></div>
         </div> 
         `
         );
@@ -351,7 +351,7 @@ function renderResults2(obj){
         $('#local-executive').append(
         `
         <div class="results-row">
-        <div class="result-Cell"><p>${title}</p><p><a href="#" id=${candidate}>${name}</a></p></div>
+        <div class="result-Cell"><p>${title}</p><p><a href="#rep-result" id=${candidate}>${name}</a></p></div>
         </div> 
         `
         );
@@ -367,7 +367,7 @@ function renderResults2(obj){
         $('#state-legislative').append(
         `
         <div class="results-row">
-        <div class="result-Cell"><p>${title}</p><p><a href="#" id=${candidate}>${name}</a></p></div>
+        <div class="result-Cell"><p>${title}</p><p><a href="#rep-result" id=${candidate}>${name}</a></p></div>
         </div> 
         `
         );
@@ -444,6 +444,7 @@ function watchForm() {
   
   });
 };
+
 
 
 //handler
