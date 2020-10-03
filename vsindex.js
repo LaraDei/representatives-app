@@ -1,15 +1,15 @@
 'use strict';
 
 // keys and URLs
-const apiKeyGoogle = config.REACT_APP_GOOGLE_API_KEY;
-const searchUrlGoogle = 'https://www.googleapis.com/civicinfo/v2/representatives';
+//const apiKeyGoogle = config.REACT_APP_GOOGLE_API_KEY;
+//const searchUrlGoogle = 'https://www.googleapis.com/civicinfo/v2/representatives';
 const apiKeyVoteSmart = config.REACT_APP_VOTESMART_API_KEY;
 const searchUrlVoteSmart = 'https://api.votesmart.org/'
 const voteSmartFeFjSj = `https://api.votesmart.org/Officials.getStatewide?key=${apiKeyVoteSmart}&o=JSON`;
 const voteSmartFlSeSl = `https://api.votesmart.org/Officials.getByZip?key=${apiKeyVoteSmart}&o=JSON`;
 const voteSmartLeLl = `http://api.votesmart.org/Local.getOfficials?key=${apiKeyVoteSmart}&o=JSON`
-const smartStreetApi = config.REACT_APP_SMARTSTREET_API_KEY
-const getZip = `https://us-street.api.smartystreets.com/street-address?key=${smartStreetApi}&match=invalid`
+//const smartStreetApi = config.REACT_APP_SMARTSTREET_API_KEY
+//const getZip = `https://us-street.api.smartystreets.com/street-address?key=${smartStreetApi}&match=invalid`
 
 
 
