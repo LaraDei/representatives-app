@@ -7,7 +7,7 @@ const apiKeyVoteSmart = '429c49885c2420058c8c1aa27e4989d9';
 const searchUrlVoteSmart = 'https://api.votesmart.org/'
 const voteSmartFeFjSj = `https://api.votesmart.org/Officials.getStatewide?key=${apiKeyVoteSmart}&o=JSON`;
 const voteSmartFlSeSl = `https://api.votesmart.org/Officials.getByZip?key=${apiKeyVoteSmart}&o=JSON`;
-const voteSmartLeLl = `http://api.votesmart.org/Local.getOfficials?key=${apiKeyVoteSmart}&o=JSON`
+const voteSmartLeLl = `https://api.votesmart.org/Local.getOfficials?key=${apiKeyVoteSmart}&o=JSON`
 //const smartStreetApi = config.REACT_APP_SMARTSTREET_API_KEY
 //const getZip = `https://us-street.api.smartystreets.com/street-address?key=${smartStreetApi}&match=invalid`
 
