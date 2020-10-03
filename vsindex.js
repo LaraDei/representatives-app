@@ -24,7 +24,7 @@ const params = [
 
     {
         zip5: '',
-        zip4: '',
+        // zip4: '',
     },
 
     {
@@ -73,34 +73,34 @@ function formatQueryParams(params) {
 //Get additional data needed zip 4 and local id ----------------------------------------------
 
 
-function getdigitZip(str){
+// function getdigitZip(str){
 
-  //format 9digit zipcode query
-  const smartyUrl = getZip +'&' + str;
-  console.log(smartyUrl);
+//   //format 9digit zipcode query
+//   const smartyUrl = getZip +'&' + str;
+//   console.log(smartyUrl);
 
-  //fetch 9 digit zipcode
-  fetch(smartyUrl)
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      }
-      throw new Error(response.statusText);
-    })
-    .then(responseJson =>  {
-        console.log(responseJson)
-        let zipFour = '';
-        for( let key in responseJson[0]){
-          zipFour = responseJson[0].components.plus4_code;
-        }
-        params[1].zip4 = zipFour
-      })
-      .catch(err => {
-        $('#js-error-message').text(`Something went wrong: ${err.message}`);
-        $('#results').addClass('hidden');
-      });
-      //getLocalId(formatQueryParams(params[4]))
-}
+//   //fetch 9 digit zipcode
+//   fetch(smartyUrl)
+//     .then(response => {
+//       if (response.ok) {
+//         return response.json();
+//       }
+//       throw new Error(response.statusText);
+//     })
+//     .then(responseJson =>  {
+//         console.log(responseJson)
+//         let zipFour = '';
+//         for( let key in responseJson[0]){
+//           zipFour = responseJson[0].components.plus4_code;
+//         }
+//         params[1].zip4 = zipFour
+//       })
+//       .catch(err => {
+//         $('#js-error-message').text(`Something went wrong: ${err.message}`);
+//         $('#results').addClass('hidden');
+//       });
+      
+// }
 
 function getLocalId(str){
   //format local ID query
@@ -438,7 +438,7 @@ function watchForm() {
     // store data
     storeData(searchStreet, searchCity, searchState, searchZip);
     //Get additional data needed zip 4 and local id
-    getdigitZip(formatQueryParams(params[0]))
+    //getdigitZip(formatQueryParams(params[0]))
     getLocalId(formatQueryParams(params[3]))
 
   
