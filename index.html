@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Representative finder</title>
     <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -37,17 +37,27 @@
             
             
             <div class="submit">
-            <input type="submit" class="btn" id="search" value="Search">
+            <input type="submit" class="btn" id="search" value="Search 🔎">
             </div>
         </form>
 
         <p id="js-error-message" class="error-message"></p>
         <p id="no-result-message" class="error-message"></p>
 
+
+
+
         <div id="results" class="results hidden">
           <h2>Search Results</h2> 
-          <h3>Local Government</h3>
-            <div class="local level ">
+          
+          <div class='tabContainer'>
+            <div class="buttonContainer">
+            <button onclick="showPanel(0, '#e63946')" class="tablink" id="defaultOpen">Local Government</button>
+            <button onclick="showPanel(1, '#457b9d')" class="tablink">State Government</button>
+            <button onclick="showPanel(2, '#1d3557')" class="tablink">Federal Government</button>
+            </div>
+          <!--<h3>Local Government</h3>-->
+            <div class="tabcontent local level " id="local-results">
               
               <div class="branch executive">
                   <h4>Executive</h4>
@@ -64,8 +74,8 @@
 
             </div>
 
-          <h3>State Government</h3>  
-            <div class="state level" id="state-results">
+          <!-- <h3>State Government</h3>  -->
+            <div class=" tabcontent state level" id="state-results">
               <div class="branch executive">
                   <h4>Executive</h4>
                   <div id="state-executive"></div>
@@ -80,8 +90,8 @@
               </div>
             </div>
 
-          <h3 >Federal Government</h3> 
-            <div class="federal level ">
+          <!--<h3 >Federal Government</h3> -->
+            <div class=" tabcontent federal level" id="fed-results">
                 <div class="branch executive">
                     <h4>Executive</h4>
                     <div id="fed-executive"></div>
@@ -95,7 +105,10 @@
                     <div id="fed-judicial"></div>
                 </div>
             </div>
-   
+
+
+          </div>
+
         </div>
 
         <div id="rep-result" class="results hidden">

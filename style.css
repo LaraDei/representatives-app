@@ -1,14 +1,18 @@
 
   body {
     font-family: 'Roboto', sans-serif;
+    background-color: #a8dadc;
   }
 
 
-  h1{
+  h1, h2{
     text-align: center;
+    
   }
   h4{
       text-align: center;
+      font-size: 100%;
+      
   }
 
   form {
@@ -34,6 +38,7 @@
   align-self: center;
   padding: 10px 0;
   font-weight: bold;
+  font-size: 20px;
   }
   
   #search{
@@ -57,12 +62,39 @@
   }
   
   .results {
-     display: flex;
-     flex-direction: column; 
-     border-radius: 10px;
-     border-color: royalblue;
-     border-width: 5px;
+    width: 100%;
+    background-color: #f1faee;
+    margin-top: 50px;
+    padding-top: 10px;
   }
+
+  .tabContainer {
+    width: 100%;
+    background-color: #f1faee;
+    padding-top: 10px;
+    
+  }
+
+  .tablink{
+    word-wrap: normal;
+  }
+
+  .tabContainer .buttonContainer, button{
+    display: inline-flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: #f1faee;
+    
+  }
+
+  .tabContainer .buttonContainer button:hover{
+    background-color: #f1faee;
+  }
+  
+  /* Style the tab content */
 
   .level {
     display: flex;
@@ -71,9 +103,11 @@
   }
   .branch{
     width: 100%;
-    margin-right: 5px;
+    margin: 20px 5px;
     border-radius: 10px;
     padding: 15px;
+    color: #f1faee
+    
   }
 
   .results-row{
@@ -83,20 +117,20 @@
     align-items: flex-start;
     
   }
-  .results-cell{
-      flex-shrink: ;
-  }
+  
+  
 
   .judicial {
-      background-color: rgba(42, 134, 19, 0.5);
+    border: 3px solid black;
+
   }
 
   .executive {  
-    background-color: rgba(0, 17, 255, 0.5);
+    border: 3px solid black;;
   }
 
   .legislative {
-    background-color: rgba(168, 5, 5, 0.5)
+    border: 3px solid black;
   }
   img{
       width: 100%;
@@ -105,6 +139,16 @@
     color: red;
 }
 
+a:link{
+ color: #edf6f9;
+}
+a:visited{
+ color: #caf0f8;
+}
+a:hover {
+ font-size: 22px;
+}
 .hidden {
   display: none;
 }
+
