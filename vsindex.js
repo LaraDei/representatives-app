@@ -443,7 +443,7 @@ function watchForm() {
     const searchStreet = $('#js-search-street').val();
     const searchCity = $('#js-search-city').val();
     const searchState = $('#js-search-state').val();
-    const searchZip = $('#js-search-zip').val();
+    const searchZip = $('#js-search-zipcode').val();
         
     // store data
     storeData(searchStreet, searchCity, searchState, searchZip);
