@@ -1,13 +1,25 @@
 
-  body {
+  html, body {
     font-family: 'Roboto', sans-serif;
-    background-color: #a8dadc;
+    height: 100%;
+    background-size: cover;
+    background-position: 0 0;
+    background-attachment: fixed;
+    background-image: url(/images/flag.jpg);
   }
 
-
-  h1, h2{
+  h1, h2, h4{
     text-align: center;
-    
+  }
+
+  .title {
+    background-color: rgba(10, 56, 126, .85);
+    color: white;
+    padding: 20px;
+    width: auto;
+    border-radius: 50px;
+
+    margin-bottom: 50px;
   }
   h4{
       text-align: center;
@@ -18,19 +30,26 @@
   form {
     display: block;
     box-sizing: border-box;
-    width: 100%;
-    position: relative
+    width: auto;
+    padding: 25px;
+    background-color: rgb(241, 250, 238, .8);
+    margin: auto;
+    border-radius: 5px;
     
   }
 
   .label{
     font-weight: bold;
+    margin: auto;
+    width: 50%;
+ 
   }
   
   .input {
-    padding: 5px;
     width: 100%;
-    margin: 10px auto 30px auto;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 
   }
 
@@ -39,10 +58,17 @@
   padding: 10px 0;
   font-weight: bold;
   font-size: 20px;
+  margin-top: 35px;
+  }
+
+  #search{
+    background-color: rgb(8, 68, 158);
+    color:white;
+    border-radius: 5px;
   }
   
   #search{
-    width: 100%;
+    width: 60%;
   }
   
  .submit{
@@ -57,57 +83,63 @@
   }
   
   .container {
-    max-width: 1000px;
     margin: 0 auto;
   }
   
   .results {
-    width: 100%;
-    background-color: #f1faee;
+    width: auto;
+    background-color: rgb(241, 250, 238, .8);
     margin-top: 50px;
     padding-top: 10px;
+    border-radius: 5px;
+    
   }
 
   .tabContainer {
-    width: 100%;
-    background-color: #f1faee;
-    padding-top: 10px;
-    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: auto;
   }
 
   .tablink{
     word-wrap: normal;
+    background-color: rgb(241, 250, 238, .8);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }
 
   .tabContainer .buttonContainer, button{
+    flex-grow: 1;
     display: inline-flex;
     justify-content: space-evenly;
     width: 100%;
     height: 100%;
     border: none;
     outline: none;
-    background-color: #f1faee;
+
     
   }
 
   .tabContainer .buttonContainer button:hover{
     background-color: #f1faee;
+    
   }
   
   /* Style the tab content */
-
-  .level {
+  .tabcontent{
     display: flex;
     flex-direction: row; 
-    justify-content: space-between;
+    flex-grow: 1;
+    justify-content: space-around;
   }
+
   .branch{
-    width: 100%;
-    margin: 20px 5px;
+    width: auto;
+    margin: 20px 0px;
     border-radius: 10px;
-    padding: 15px;
-    color: #f1faee
-    
+    padding: 5px;
+    color: #f1faee;
   }
 
   .results-row{
@@ -115,11 +147,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    
   }
   
-  
-
   .judicial {
     border: 3px solid black;
 
@@ -152,3 +181,14 @@ a:hover {
   display: none;
 }
 
+@media (min-width: 600px){
+  .container {
+    width: 60%;
+  }
+  .branch{
+    width: 25%
+    
+
+  }
+
+}

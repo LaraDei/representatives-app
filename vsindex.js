@@ -455,7 +455,7 @@ function watchForm() {
   });
 };
 
-const tabButtons= document.querySelectorAll('.tabContainer .buttonContainer button');
+const tabButtons= document.querySelectorAll('.tabContainer .buttonContainer .tablink');
 const tabPannels= document.querySelectorAll('.tabContainer .tabcontent');
 
 
@@ -480,6 +480,7 @@ function showPanel(index, color){
 
 
 function handleSearchApp() {
+  
   showPanel(0, '#a8dadc');
   document.getElementById("defaultOpen").click()
   watchForm();
