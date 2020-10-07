@@ -238,8 +238,8 @@ function getReps(params) {
     //local court placeholder
     $('#local-judicial').append(
         `
-        <div class="results-row">
-        <div class="result-Cell"><p>${params[0].city} City Municipal Court</p></p></div>
+        <div class="result">
+        <div class="result rep"><p>${params[0].city} City Municipal Court</p></p></div>
         </div> 
         `
         );
@@ -253,8 +253,13 @@ function getReps(params) {
 
 
 };
+
+
     
 //render results----------------------------------------------------------------
+
+
+
 function renderResults(obj){
   let candidateId = '';
   let title = '';
@@ -275,8 +280,8 @@ function renderResults(obj){
         //console.log(name)
         $('#fed-executive').append(
         `
-        <div class="results-row">
-        <div class="result-Cell"><p>${title}</p><p><data value="${candidateId}"><a href="#" id=${first}-${last}>${name}</a></data></p></div>
+        <div class="result">
+        <div class="result rep"><p>${title}</p><p><a href="https://justfacts.votesmart.org/candidate/biography/${candidateId}/" target="_blank" id=${first}-${last}>${name}</a></p></div>
         </div> 
         `
         );
@@ -292,8 +297,8 @@ function renderResults(obj){
         //console.log(name)
         $('#fed-judicial').append(
         `
-        <div class="results-row">
-        <div class="result-Cell"><p>${title}</p><p><a href="#" id=${first}-${last}>${name}</a></p></div>
+        <div class="result">
+        <div class="result rep"><p>${title}</p><p><a href="https://justfacts.votesmart.org/candidate/biography/${candidateId}/" target="_blank" id=${first}-${last}>${name}</a></p></div>
         </div> 
         `
         );
@@ -309,8 +314,8 @@ function renderResults(obj){
         //console.log(name)
         $('#state-judicial').append(
         `
-        <div class="results-row">
-        <div class="result-Cell"><p>${title}</p><p><a href="#" id=${first}-${last}>${name}</a></p></div>
+        <div class="result">
+        <div class="result rep"><p>${title}</p><p><a href="https://justfacts.votesmart.org/candidate/biography/${candidateId}/" target="_blank" id=${first}-${last}>${name}</a></p></div>
         </div> 
         `
         );
@@ -340,8 +345,8 @@ function renderResults2(obj){
         //console.log(name)
         $('#local-legislative').append(
         `
-        <div class="results-row">
-        <div class="result-Cell"><p>${title}</p><p><a href="#rep-result" id=${first}-${last}>${name}</a></p></div>
+        <div class="result">
+        <div class="result rep"><p>${title}</p><p><a href="https://justfacts.votesmart.org/candidate/biography/${candidateId}/" target="_blank" id=${first}-${last}>${name}</a></p></div>
         </div> 
         `
         );
@@ -357,8 +362,8 @@ function renderResults2(obj){
         //console.log(name)
         $('#local-executive').append(
         `
-        <div class="results-row">
-        <div class="result-Cell"><p>${title}</p><p><a href="#rep-result" id=${first}-${last}>${name}</a></p></div>
+        <div class="result">
+        <div class="result rep"><p>${title}</p><p><a href="https://justfacts.votesmart.org/candidate/biography/${candidateId}/" target="_blank" id=${first}-${last}>${name}</a></p></div>
         </div> 
         `
         );
@@ -374,8 +379,8 @@ function renderResults2(obj){
         //console.log(name)
         $('#state-legislative').append(
         `
-        <div class="results-row">
-        <div class="result-Cell"><p>${title}</p><p><a href="#rep-result" id=${first}-${last}>${name}</a></p></div>
+        <div class="result">
+        <div class="result rep"><p>${title}</p><p><a href="https://justfacts.votesmart.org/candidate/biography/${candidateId}/" target="_blank" id=${first}-${last}>${name}</a></p></div>
         </div> 
         `
         );
@@ -392,8 +397,8 @@ function renderResults2(obj){
         //console.log(name)
         $('#state-executive').append(
         `
-        <div class="results-row">
-        <div class="result-Cell"><p>${title}</p><p><a href="#" id=${first}-${last}>${name}</a></p></div>
+        <div class="result">
+        <div class="result rep"><p>${title}</p><p><a href="https://justfacts.votesmart.org/candidate/biography/${candidateId}/" target="_blank" id=${first}-${last}>${name}</a></p></div>
         </div> 
         `
         );
@@ -409,8 +414,8 @@ function renderResults2(obj){
         //console.log(name)
         $('#fed-legislative').append(
         `
-        <div class="results-row">
-        <div class="result-Cell"><p>${title}</p><p><a href="#" id=${first}-${last}>${name}</a></p></div>
+        <div class="rep">
+        <div class="result rep"><p>${title}</p><p><a href="https://justfacts.votesmart.org/candidate/biography/${candidateId}/" target="_blank" id=${first}-${last}>${name}</a></p></div>
         </div> 
         `
         );
@@ -419,6 +424,28 @@ function renderResults2(obj){
 };
 
 
+
+
+//tab display--------------------------------------------------`
+const tabButtons= document.querySelectorAll('.tabContainer .buttonContainer .tablink');
+const tabPannels= document.querySelectorAll('.tabContainer .tabcontent');
+
+
+function showPanel(index, color){
+  tabButtons.forEach(function(x) {
+    x.style.backgroundColor="";
+    x.style.color="";
+  });
+  tabButtons[index].style.backgroundColor=color;
+  tabButtons[index].style.color='white';
+
+  tabPannels.forEach(function(x) {
+    x.style.display="none";
+  });
+
+   tabPannels[index].style.display="flex";
+   tabPannels[index].style.backgroundColor=color;
+}
   
 
   
@@ -455,28 +482,11 @@ function watchForm() {
   });
 };
 
-const tabButtons= document.querySelectorAll('.tabContainer .buttonContainer .tablink');
-const tabPannels= document.querySelectorAll('.tabContainer .tabcontent');
 
 
-function showPanel(index, color){
-  tabButtons.forEach(function(x) {
-    x.style.backgroundColor="";
-    x.style.color="";
-  });
-  tabButtons[index].style.backgroundColor=color;
-  tabButtons[index].style.color='white';
-
-  tabPannels.forEach(function(x) {
-    x.style.display="none";
-  });
-
-   tabPannels[index].style.display="flex";
-   tabPannels[index].style.backgroundColor=color;
-}
 
 
-//handler
+//handler--------------------------------------------------------
 
 
 function handleSearchApp() {
