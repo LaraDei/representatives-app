@@ -1,15 +1,13 @@
 'use strict';
 
 // keys and URLs
-//const apiKeyGoogle = config.REACT_APP_GOOGLE_API_KEY;
-//const searchUrlGoogle = 'https://www.googleapis.com/civicinfo/v2/representatives';
+
 const apiKeyVoteSmart = '429c49885c2420058c8c1aa27e4989d9';
 const searchUrlVoteSmart = 'https://api.votesmart.org/';
 const voteSmartFeFjSj = `https://api.votesmart.org/Officials.getStatewide?key=${apiKeyVoteSmart}&o=JSON`;
 const voteSmartFlSeSl = `https://api.votesmart.org/Officials.getByZip?key=${apiKeyVoteSmart}&o=JSON`;
-const voteSmartLeLl = `https://api.votesmart.org/Local.getOfficials?key=${apiKeyVoteSmart}&o=JSON`
-//const smartStreetApi = config.REACT_APP_SMARTSTREET_API_KEY;
-//const getZip = `https://us-street.api.smartystreets.com/street-address?key=${smartStreetApi}&match=invalid`;
+const voteSmartLeLl = `https://api.votesmart.org/Local.getOfficials?key=${apiKeyVoteSmart}&o=JSON`;
+
 
 
 
@@ -23,16 +21,16 @@ const params = [
     },
 
     {
-        zip5: '',
-        // zip4: '',
+        zip5: ''
+  
     },
 
     {
-        localId: '',
+        localId: ''
     },
 
     {
-        stateId: '',
+        stateId: ''
     }
 
 
@@ -70,38 +68,7 @@ function formatQueryParams(params) {
 
 
 
-//Get additional data needed zip 4 and local id ----------------------------------------------
 
-//disabled because available data/gets ran out
-
-// function getdigitZip(str){
-
-//   //format 9digit zipcode query
-//   const smartyUrl = getZip +'&' + str;
-//   console.log(smartyUrl);
-
-//   //fetch 9 digit zipcode
-//   fetch(smartyUrl)
-//     .then(response => {
-//       if (response.ok) {
-//         return response.json();
-//       }
-//       throw new Error(response.statusText);
-//     })
-//     .then(responseJson =>  {
-//         console.log(responseJson)
-//         let zipFour = '';
-//         for( let key in responseJson[0]){
-//           zipFour = responseJson[0].components.plus4_code;
-//         }
-//         params[1].zip4 = zipFour
-//       })
-//       .catch(err => {
-//         $('#js-error-message').text(`Something went wrong: ${err.message}`);
-//         $('#results').addClass('hidden');
-//       });
-      
-// }
 
 function getLocalId(str){
   //format local ID query to pull local executive and legislative
@@ -183,7 +150,7 @@ function getReps(params) {
       throw new Error(response.statusText);
       })
     .then(responseJson =>  {
-      console.log(responseJson)
+      console.log(responseJson);
       renderResults(responseJson);
       })
     .catch(err => {
@@ -208,16 +175,17 @@ function getReps(params) {
       throw new Error(response.statusText);
       })
     .then(responseJson =>  {
-      console.log(responseJson)
+      console.log(responseJson);
       renderResults2(responseJson);
-      //local court placeholder
+      // Local Judical -------
+      //local Judical placeholder
       $('#local-judicial').append(
       `
       <div class="result">
       <div class="result rep"><p>${params[0].city} City Municipal Court</p></p></div>
       </div> 
       `
-      )
+      );
     })
     .catch(err => {
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
@@ -248,8 +216,6 @@ function getReps(params) {
       $('#js-error-message').text(`Sorry, but we were not able to find your city in the Vote Smart Data. Please check out your federal and state reps`);
       $('#results').addClass('hidden');
       });
-  
-    // Local Judical -------
 
 
 };
@@ -257,6 +223,7 @@ function getReps(params) {
 
     
 //render results----------------------------------------------------------------
+//two render function to prevent incorrect state and local data 
 
 
 
@@ -272,13 +239,13 @@ function renderResults(obj){
 
     //federal executive  
     if(obj.candidateList.candidate[i].officeId === '1' || obj.candidateList.candidate[i].officeId === '2'){
-        //console.log(candidateList.candidate[i])
+    
         title =  obj.candidateList.candidate[i].title;
         first = obj.candidateList.candidate[i].firstName;
         last =  obj.candidateList.candidate[i].lastName;
         candidateId = obj.candidateList.candidate[i].candidateId;
         name = `${first} ${last}`;
-        //console.log(name)
+      
         $('#fed-executive').append(
         `
         <div class="result">
@@ -289,13 +256,13 @@ function renderResults(obj){
     }
     //federal judicial
     if(obj.candidateList.candidate[i].officeId === '77' || obj.candidateList.candidate[i].officeId === '76'){
-        //console.log(candidateList.candidate[i])
+      
         title =  obj.candidateList.candidate[i].title;
         first = obj.candidateList.candidate[i].firstName;
         last =  obj.candidateList.candidate[i].lastName;
         candidateId = obj.candidateList.candidate[i].candidateId;
         name = `${first} ${last}`;
-        //console.log(name)
+        
         $('#fed-judicial').append(
         `
         <div class="result">
@@ -306,13 +273,13 @@ function renderResults(obj){
     }
     //state judicial
     if(obj.candidateList.candidate[i].officeName.includes('Supreme Court') && obj.candidateList.candidate[i].officeStateId === params[3].stateId){
-        //console.log(candidateList.candidate[i])
+        
         title =  obj.candidateList.candidate[i].title;
         first = obj.candidateList.candidate[i].firstName;
         last =  obj.candidateList.candidate[i].lastName;
         candidateId = obj.candidateList.candidate[i].candidateId;
         name = `${first} ${last}`;
-        //console.log(name)
+        
         $('#state-judicial').append(
         `
         <div class="result">
@@ -326,7 +293,7 @@ function renderResults(obj){
   $('#results').removeClass('hidden');
  
   document.querySelector('#results').scrollIntoView({ 
-    behavior: 'smooth' 
+    behavior: 'smooth'
   });
 
 };
@@ -343,13 +310,13 @@ function renderResults2(obj){
   for(let i = 0; i < obj.candidateList.candidate.length; i++){
     //local legislative
     if(obj.candidateList.candidate[i].officeId === '359'){
-        //console.log(candidateList.candidate[i])
+        
         title =  obj.candidateList.candidate[i].title;
         first = obj.candidateList.candidate[i].firstName;
         last =  obj.candidateList.candidate[i].lastName;
         candidateId = obj.candidateList.candidate[i].candidateId;
         name = `${first} ${last}`;
-        //console.log(name)
+        
         $('#local-legislative').append(
         `
         <div class="result">
@@ -360,13 +327,13 @@ function renderResults2(obj){
     };
     //local executive
     if(obj.candidateList.candidate[i].officeId === '430' || obj.candidateList.candidate[i].officeId === '73'){
-        //console.log(candidateList.candidate[i])
+       
         title =  obj.candidateList.candidate[i].title;
         first = obj.candidateList.candidate[i].firstName;
         last =  obj.candidateList.candidate[i].lastName;
         candidateId = obj.candidateList.candidate[i].candidateId;
         name = `${first} ${last}`;
-        //console.log(name)
+        
         $('#local-executive').append(
         `
         <div class="result">
@@ -378,13 +345,13 @@ function renderResults2(obj){
     //local legislative
     
     if(obj.candidateList.candidate[i].officeId === '7' || obj.candidateList.candidate[i].officeId === '9' || obj.candidateList.candidate[i].officeId === '8'){
-        //console.log(candidateList.candidate[i])
+       
         title =  obj.candidateList.candidate[i].title;
         first = obj.candidateList.candidate[i].firstName;
         last =  obj.candidateList.candidate[i].lastName;
         candidateId = obj.candidateList.candidate[i].candidateId;
         name = `${first} ${last}`;
-        //console.log(name)
+      
         $('#state-legislative').append(
         `
         <div class="result">
@@ -396,13 +363,13 @@ function renderResults2(obj){
     //state legislative
     if(obj.candidateList.candidate[i].officeId === '3' || obj.candidateList.candidate[i].officeId === '4' || 
     obj.candidateList.candidate[i].officeId === '12' || obj.candidateList.candidate[i].officeId === '44'){
-        //console.log(candidateList.candidate[i])
+   
         title =  obj.candidateList.candidate[i].title;
         first = obj.candidateList.candidate[i].firstName;
         last =  obj.candidateList.candidate[i].lastName;
         candidateId = obj.candidateList.candidate[i].candidateId;
         name = `${first} ${last}`;
-        //console.log(name)
+        
         $('#state-executive').append(
         `
         <div class="result">
@@ -413,13 +380,13 @@ function renderResults2(obj){
     };
     //federal legislative
     if(obj.candidateList.candidate[i].officeId === '6' || obj.candidateList.candidate[i].officeId === '5'){
-        //console.log(candidateList.candidate[i])
+        
         title =  obj.candidateList.candidate[i].title;
         first = obj.candidateList.candidate[i].firstName;
         last =  obj.candidateList.candidate[i].lastName;
         candidateId = obj.candidateList.candidate[i].candidateId;
         name = `${first} ${last}`;
-        //console.log(name)
+        
         $('#fed-legislative').append(
         `
         <div class="rep">
@@ -474,17 +441,16 @@ function watchForm() {
     
     // store data
     storeData(searchStreet, searchCity, searchState, searchZip);
-    //Get additional data needed zip 4 and local id -disabled out of data for this API
-    //getdigitZip(formatQueryParams(params[0]))
+    //Get additional data needed local id 
     getLocalId(formatQueryParams(params[3]));
-    $('form')[0].reset()
+    $('form')[0].reset();
     
   });
 };
 
 
 function clearResults(){;
-   $('.result').empty()
+   $('.result').empty();
    $('#results').addClass('hidden');
    $('#js-error-message').empty();
 }
@@ -497,7 +463,7 @@ function clearResults(){;
 
 function handleSearchApp() {
   showPanel(0, '#a8dadc');
-  document.getElementById("defaultOpen").click()
+  document.getElementById("defaultOpen").click();
   watchForm();
 }
 
