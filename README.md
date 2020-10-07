@@ -1,18 +1,27 @@
-# who-are-your-representatives-app
+# representatives-app
 
-<h1>Who are your representatives in the USA?</h1>
+<h1>representatives-app</h1>
 <hr>
-<h2>find your reps app</h2>
+<h2>Who are your representatives in the USA?</h2>
 
 <a id="representatives-app" href="https://laradei.github.io/representatives-app/">https://laradei.github.io/representatives-app/</a>
  
-<h3>outline</h3>
-<p>This app accepts your address and returns your U.S. representatives at the local, state, and federal level. The data at vote smart has some holes, and you might not get local government data if you live in a small town </p>
+<h3>Summary</h3>
+<p>This app accepts your address and returns your U.S. representatives at the local, state, and federal level </p>
 
 <p>I've used <a href="https://votesmart.org/share/api#.X3vnxmhKiM9">The Vote Smart API</a></p>
 
+<p>Search form:</p>
 <p>please match the address format given in the placeholders</p>
+<img src="images/search.PNG" alt="search-page" style="max-width:100%;">
 
+<p>Results:</p>
+<p>The data at vote smart has some holes, and you might not get local government data if you live in a small town</p>
+<img src="images/results.PNG" alt="results-page" style="max-width:100%;">
+
+
+<h3>Technology Used</h3>
+<p>HTML/CSS/JavaScript/jQuery</p>
 
 
 <h3>The API hack capstone assignment</h3>
