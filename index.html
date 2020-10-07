@@ -41,7 +41,7 @@
             </div>
         </form>
 
-        <p id="js-error-message" class="error-message"></p>
+        <div id="js-error-message" class="error-message"></div>
         <p id="no-result-message" class="error-message"></p>
 
 
@@ -49,7 +49,6 @@
 
         <div id="results" class="results hidden">
           <h2>Search Results</h2> 
-          
           <div class='tabContainer'>
             <div class="buttonContainer">
             <button onclick="showPanel(0, '#e63946')" class="tablink" id="defaultOpen">Local Government</button>
@@ -61,7 +60,7 @@
               
               <div class="branch executive">
                   <h4>Executive</h4>
-                  <div id="local-executive"></div>
+                  <div id="local-executive" class="res"></div>
               </div>
               <div class="branch legislative" >
                   <h4>Legislative</h4>
@@ -117,7 +116,7 @@
     <script src='https://unpkg.com/brusher@0.1.4/dist/brusher.min.js'></script>
     <script src='config.js'></script>
     <script src="vsindex.js"></script>
-  </div>
+  
 </body>
 </html>
         

@@ -72,7 +72,7 @@ function formatQueryParams(params) {
 
 //Get additional data needed zip 4 and local id ----------------------------------------------
 
-//diabled because available data/gets ran out
+//disabled because available data/gets ran out
 
 // function getdigitZip(str){
 
@@ -105,6 +105,7 @@ function formatQueryParams(params) {
 
 function getLocalId(str){
   //format local ID query to pull local executive and legislative
+  
   const localIdUrl = searchUrlVoteSmart +'Local.getCities?key=429c49885c2420058c8c1aa27e4989d9&o=JSON&' + str;
   console.log(localIdUrl);
 
@@ -123,8 +124,8 @@ function getLocalId(str){
             params[2].localId = responseJson.cities.city[i].localId;    
           }
         }
-
         getReps(params);
+        
       })
       .catch(err => {
         $('#js-error-message').text(`Something went wrong: ${err.message}`);
@@ -143,7 +144,7 @@ function getLocalId(str){
 
 function getReps(params) {
 
-
+ 
   // get Fed Executive and Fed Judicial-------
 
   //format Officials query
@@ -209,7 +210,15 @@ function getReps(params) {
     .then(responseJson =>  {
       console.log(responseJson)
       renderResults2(responseJson);
-      })
+      //local court placeholder
+      $('#local-judicial').append(
+      `
+      <div class="result">
+      <div class="result rep"><p>${params[0].city} City Municipal Court</p></p></div>
+      </div> 
+      `
+      )
+    })
     .catch(err => {
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
       $('#results').addClass('hidden');
@@ -234,18 +243,9 @@ function getReps(params) {
     .then(responseJson =>  {
       console.log(responseJson);
       renderResults2(responseJson);
-      
-    //local court placeholder
-    $('#local-judicial').append(
-        `
-        <div class="result">
-        <div class="result rep"><p>${params[0].city} City Municipal Court</p></p></div>
-        </div> 
-        `
-        );
-      })
+    })
     .catch(err => {
-      $('#js-error-message').text(`Something went wrong: ${err.message}`);
+      $('#js-error-message').text(`Sorry, but we were not able to find your city in the Vote Smart Data. Please check out your federal and state reps`);
       $('#results').addClass('hidden');
       });
   
@@ -261,6 +261,7 @@ function getReps(params) {
 
 
 function renderResults(obj){
+ 
   let candidateId = '';
   let title = '';
   let first = '';
@@ -331,6 +332,7 @@ function renderResults(obj){
 };
 
 function renderResults2(obj){
+  
   let candidateId = '';
   let photo = '';
   let title = '';
@@ -374,6 +376,7 @@ function renderResults2(obj){
         );
     };
     //local legislative
+    
     if(obj.candidateList.candidate[i].officeId === '7' || obj.candidateList.candidate[i].officeId === '9' || obj.candidateList.candidate[i].officeId === '8'){
         //console.log(candidateList.candidate[i])
         title =  obj.candidateList.candidate[i].title;
@@ -437,6 +440,7 @@ const tabPannels= document.querySelectorAll('.tabContainer .tabcontent');
 
 
 function showPanel(index, color){
+  
   tabButtons.forEach(function(x) {
     x.style.backgroundColor="";
     x.style.color="";
@@ -460,34 +464,30 @@ function watchForm() {
 //watch for submit 
   $('form').submit(event => {
     event.preventDefault();
-    $('#js-error-message').empty();
-    $('#results').addClass('hidden');
-    $('#local-executive').empty();
-    $('#local-legislative').empty();
-    $('#local-judicial').empty();
-    $('#state-executive').empty();
-    $('#state-legislative').empty();
-    $('#state-judicial').empty();
-    $('#fed-executive').empty();
-    $('#fed-legislative').empty();
-    $('#fed-judicial').empty();
-    //declare submitted values
+    clearResults()
+    params[2].localId = '';
+    // declare submitted values
     const searchStreet = $('#js-search-street').val();
     const searchCity = $('#js-search-city').val();
     const searchState = $('#js-search-state').val();
     const searchZip = $('#js-search-zipcode').val();
-        
+    
     // store data
     storeData(searchStreet, searchCity, searchState, searchZip);
     //Get additional data needed zip 4 and local id -disabled out of data for this API
     //getdigitZip(formatQueryParams(params[0]))
     getLocalId(formatQueryParams(params[3]));
+    $('form')[0].reset()
     
-
-  
   });
 };
 
+
+function clearResults(){;
+   $('.result').empty()
+   $('#results').addClass('hidden');
+   $('#js-error-message').empty();
+}
 
 
 
@@ -496,7 +496,6 @@ function watchForm() {
 
 
 function handleSearchApp() {
-  
   showPanel(0, '#a8dadc');
   document.getElementById("defaultOpen").click()
   watchForm();

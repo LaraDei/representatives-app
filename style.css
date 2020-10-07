@@ -9,7 +9,7 @@
   }
 
 
-  h1, h2, h4, {
+  h1, h2, h4 {
     font-family: 'Kameron', serif;
   }
   h4{
@@ -63,7 +63,6 @@
   align-self: center;
   padding: 10px 0;
   font-weight: bold;
-  margin-top: 35px;
   font-size: 80%;
   }
 
@@ -72,6 +71,7 @@
     color:white;
     border-radius: 5px;
     font-size: 20px;
+    margin-top: 35px;
   }
   
   #search{
@@ -97,7 +97,7 @@
     width: auto;
     background-color: rgb(241, 250, 238, .8);
     margin-top: 50px;
-    padding-top: 10px;
+    padding-top: 5px;
     border-radius: 5px;
     
   }
@@ -176,7 +176,13 @@
       width: 100%;
   }
 .error-message {
-    color: red;
+    color: red;  
+    background-color: rgb(241, 250, 238, .8);
+    text-align: center;
+    font-weight: bold;
+    font-size: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
 a:link{
