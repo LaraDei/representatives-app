@@ -1,11 +1,21 @@
 
   html, body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Kameron', serif;
     height: 100%;
     background-size: cover;
     background-position: 0 0;
     background-attachment: fixed;
     background-image: url("images/flag.jpg");
+  }
+
+
+  h1, h2, h4, {
+    font-family: 'Kameron', serif;
+  }
+  h4{
+    text-decoration: underline;
+    text-decoration-style: double;
+    color: #ffffff;
   }
 
   h1, h2, h4, p{
@@ -20,11 +30,6 @@
     border-radius: 50px;
 
     margin-bottom: 50px;
-  }
-  h4{
-
-      font-size: 100%;
-      
   }
 
   form {
@@ -109,6 +114,8 @@
     background-color: rgb(241, 250, 238, .8);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    font-family:  'Kameron', serif;
+    font-size: 100%;
   }
 
   .tabContainer .buttonContainer, button{
@@ -142,7 +149,7 @@
     margin: 20px 0px;
     border-radius: 10px;
     text-align: center;
-    color: #f1faee;
+    color: #e8f1e4;
   }
 
   .results-row{

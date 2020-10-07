@@ -323,6 +323,11 @@ function renderResults(obj){
   };
 
   $('#results').removeClass('hidden');
+ 
+  document.querySelector('#results').scrollIntoView({ 
+    behavior: 'smooth' 
+  });
+
 };
 
 function renderResults2(obj){
@@ -477,6 +482,7 @@ function watchForm() {
     //Get additional data needed zip 4 and local id -disabled out of data for this API
     //getdigitZip(formatQueryParams(params[0]))
     getLocalId(formatQueryParams(params[3]));
+    
 
   
   });
