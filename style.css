@@ -137,7 +137,7 @@
   /* Style the tab content */
   .tabcontent{
     display: flex;
-    flex-direction: row; 
+    flex-direction: column; 
     flex-grow: 1;
     justify-content: space-around;
     margin: 0 ;
@@ -203,8 +203,9 @@ a:hover {
   }
   .branch{
     width: 25%
-    
-
   }
+
+  .tabcontent{
+    flex-direction: row;
 
 }
