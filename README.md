@@ -7,16 +7,18 @@
 <a id="representatives-app" href="https://laradei.github.io/representatives-app/">https://laradei.github.io/representatives-app/</a>
  
 <h3>Summary</h3>
-<p>This app accepts your address and returns your U.S. representatives at the local, state, and federal level </p>
+<p>I wanted to create an app that teachers and students can use to identify their U.S. representatives at the local, state, and federal level. The data should give students a snapshot of what their governmnet looks like today.</p>
+
+<p>The overall goal is that teachers can create research assignments and then have students use this app to facilitate their research with primary sources.</p>
 
 <p>I've used <a href="https://votesmart.org/share/api#.X3vnxmhKiM9">The Vote Smart API</a></p>
 
 <p>Search form:</p>
-<p>please match the address format given in the placeholders</p>
+<p>Users will be able to retrieve this information by submitting their address. Please match the address format given in the placeholders</p>
 <img src="images/search.PNG" alt="search-page" style="max-width:100%;">
 
 <p>Results:</p>
-<p>The data at vote smart has some holes, and you might not get local government data if you live in a small town</p>
+<p>Users can then click a politician’s name to get voting records, positions, and speeches at the vote smart website. The data at vote smart has some holes, and you might not get local government data if you live in a small town</p>
 <img src="images/results.PNG" alt="results-page" style="max-width:100%;">
 
 
